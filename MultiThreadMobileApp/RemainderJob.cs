@@ -12,7 +12,7 @@ namespace MultiThreadMobileApp
         public RemainderJob(Action<string> showMessage)
         {
             _showMessage = showMessage;
-            Time = DateTime.Now.AddMinutes(5);
+            Time = DateTime.Now.AddMinutes(2);
         }
 
         #region IScheduledJob Members

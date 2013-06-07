@@ -44,6 +44,7 @@ namespace MultiThreadMobileApp
             else
             {
                 listView1.Items.Add(new ListViewItem(msg));
+                listView1.EnsureVisible(listView1.Items.Count - 1);
             }
         }
 
