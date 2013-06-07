@@ -64,6 +64,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OneTimeJob.cs" />
     <Compile Include="Processing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,7 +98,7 @@
     <Compile Include="RemainderForm.Designer.cs">
       <DependentUpon>RemainderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemainderJob.cs" />
+    <Compile Include="BasicRemainderJob.cs" />
     <Compile Include="ScheduledJob.cs" />
     <Compile Include="ShowTimeJob.cs" />
     <Compile Include="ThreadPoolForm.cs">
