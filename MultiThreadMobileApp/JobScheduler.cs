@@ -70,9 +70,7 @@ namespace MultiThreadMobileApp
 
         private void Timer_callback(object state)
         {
-            if (NotRunning())
-                return;
-            if (Busy())
+            if (NotRunning() || Busy())
                 return;
 
             ExecuteAllJobs();
