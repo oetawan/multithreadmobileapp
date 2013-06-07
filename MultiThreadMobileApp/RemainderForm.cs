@@ -20,7 +20,7 @@ namespace MultiThreadMobileApp
             InitializeComponent();
             js = new JobScheduler(1000);
             js.Register(new ShowTimeJob(ShowTime));
-            js.Register(new RemainderJob(ShowRemainder));
+            js.Register(new RemainderJob(DateTime.Now.AddMinutes(2),1, ShowRemainder, "Take a bath!!"));
         }
 
         private void ShowTime(DateTime time)

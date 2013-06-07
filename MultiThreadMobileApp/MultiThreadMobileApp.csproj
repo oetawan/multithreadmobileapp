@@ -98,6 +98,7 @@
       <DependentUpon>RemainderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RemainderJob.cs" />
+    <Compile Include="ScheduledJob.cs" />
     <Compile Include="ShowTimeJob.cs" />
     <Compile Include="ThreadPoolForm.cs">
       <SubType>Form</SubType>

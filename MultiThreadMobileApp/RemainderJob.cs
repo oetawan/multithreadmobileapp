@@ -5,31 +5,21 @@ using System.Text;
 
 namespace MultiThreadMobileApp
 {
-    public class RemainderJob: IScheduledJob
+    public class RemainderJob: ScheduledJob
     {
-        Action<string> _showMessage;
-
-        public RemainderJob(Action<string> showMessage)
+        Action<string> _showMessageAction;
+        string _msg;
+        public RemainderJob(DateTime date, int repeatInvervalInMinutes, Action<string> showMessageAction, string msg)
+            : base(date, repeatInvervalInMinutes)
         {
-            _showMessage = showMessage;
-            Time = DateTime.Now.AddMinutes(2);
+            _showMessageAction = showMessageAction;
+            _msg = msg;
         }
 
-        #region IScheduledJob Members
-
-        public DateTime Time { get; private set; }
-
-        #endregion
-
-        #region IJob Members
-
-        public void Execute()
+        protected override void DoExecute()
         {
-            if (_showMessage != null)
-                _showMessage("Go home: " + DateTime.Now.ToShortTimeString());
-            Time = DateTime.Now.AddMinutes(1);
+            if (_showMessageAction != null)
+                _showMessageAction(_msg);
         }
-
-        #endregion
     }
 }
